@@ -1,30 +1,50 @@
-import React from 'react';
+import axios from 'axios';
+import React, { Component } from 'react';
 
+class DisplayData extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            songs:[],
+        }
+    }
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8000/music/')
+        .then(response =>{
+            this.setState({
+                songs:response.data
+            })
+            console.log(response.data)
+        })
+    }
 
-function DisplayData(props){
-    return(
-        <div>
-
-            <table>
-                <thead>
-                    <th>
-                        <td>Song Title</td>
-                        <td>Album</td>
+    render() {
+        return(
+            <div className="display">
+        
+                <h1>List of Songs</h1>
+                <table>
+                    <thead>
+                        <td>Title</td>
                         <td>Artist</td>
+                        <td>Album</td>
                         <td>Genre</td>
                         <td>Release Date</td>
-                    </th>
-                </thead>
-                <tbody>
+                    </thead>
+
+
+
+                </table>
                
-                    <tr>
-
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-    )
+                {
+                    this.state.songs.map(song => 
+                    <div key={song.title}>{song.title} {song.artist} {song.album} {song.genre} {song.release_date}</div>)
+                }
+            </div>
+        )
+    }
+    
 }
 
-export default DisplayData
+export default DisplayData;
+
