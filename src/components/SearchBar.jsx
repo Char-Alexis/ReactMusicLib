@@ -27,11 +27,23 @@ class SearchBar extends Component {
     render() {
         return (
             <div class="input-group">
-                <h3>Search Songs</h3>
+                <h3>Search songs by:</h3>
     
-                <input type="text" placeholder='Search by Genre...'onChange={this.inputChange} value={this.state.filterSearch}/>
-                <button type="button" class="btn btn-outline-dark btn-rounded" data-mdb-ripple-color="dark">search</button>
-        
+                <input type="text" placeholder='Search ...'onChange={this.inputChange} value={this.state.filterSearch}/>
+                
+                {/* <button type="button" class="btn btn-outline-dark btn-rounded" data-mdb-ripple-color="dark">search</button> */}
+                
+                    <li><button class="dropdown-item" type="button">Title</button></li>
+                    <li>
+                    <button class="dropdown-item" type="button">Artist</button>
+                    </li>
+                    <li>
+                    <button class="dropdown-item" type="button">Album</button>
+                    </li>
+                    <li>
+                    <button class="dropdown-item" type="button">Genre</button>
+                    </li> 
+                    
             </div>
         )
     }
