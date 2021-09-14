@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 
 const SongForm = () => {
@@ -9,12 +11,7 @@ const SongForm = () => {
     const [artist, setArtist] = useState()
     const [genre, setGenre] = useState()
     const [releaseDate, setReleaseDate] = useState()
-    
-    async function getAllSongs(){
-        let response = await axios.get('http://127.0.0.1:8000/music/')
-        setSongs(response)
-    }   
-
+ 
     function handleChange (event) {
         setSongs(event.target.value);
     };
@@ -31,8 +28,7 @@ const SongForm = () => {
             releaseDate: releaseDate
           };
           console.log(data)
-          axios
-            .post("http://127.0.0.1:8000/music/", data)
+          axios.post("http://127.0.0.1:8000/music/", data)
             // .then(res => {
             //     console.log(res)
             // })
@@ -42,8 +38,10 @@ const SongForm = () => {
 
 
     return (
-        <div className="container">
-            <form onSubmit= {(event) => handleSubmit(event)}>
+        <div className="SongForm">
+            <h2>Song Form</h2>
+            
+            <form className="row" onSubmit= {(event) => handleSubmit(event)}>
                 <label>Song Title</label>
                 <input type= "text" name="songtitle" onChange={handleChange} value={title}/>
                 <label>Album</label>
@@ -54,7 +52,7 @@ const SongForm = () => {
                 <input type= "text" name="genre" onChange={handleChange} value={genre} />
                 <label>Release Date</label>
                 <input type= "text" name="releasedate" onChange={handleChange} value={releaseDate} />
-                <button type="submit"> Add Song</button>
+                <button type="submit" class="btn btn-outline-dark btn-rounded"> Add Song</button>
             </form>
         </div>
       );

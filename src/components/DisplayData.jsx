@@ -25,8 +25,8 @@ class DisplayData extends Component {
     render() { 
         return ( 
             <div>
-                <h1>Song List</h1>
-            <table>
+                <h2>Song List</h2>
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -40,9 +40,7 @@ class DisplayData extends Component {
                 
                     {
                         this.state.songs.length === 0 ?
-                        <tr align="center">
-                            <td colSpan="5">No Songs Available.</td>
-                        </tr> :
+                        <tr align="center"></tr> :
                     
                         this.state.songs.map((song)=> (
                         <tr key={song.id}>
@@ -53,7 +51,10 @@ class DisplayData extends Component {
                             <td>{song.album}</td>
                             <td>{song.genre}</td>
                             <td>{song.release_date}</td>
-                            
+                            {/* <td>
+                                <button onClick={this.props.removeSong}>Delete</button>
+                            </td> 
+                             */}
                         </tr>
                         ))
                     }
