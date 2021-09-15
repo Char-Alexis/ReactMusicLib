@@ -1,4 +1,3 @@
-import React, {useState} from "react"
 import axios from "axios";
 import { Component } from "react";
 import DisplayData from "./DisplayData";
@@ -33,7 +32,25 @@ class App extends Component {
         })
     }
 
+
+    deleteSongData = (id) => {
+        axios.delete ("http://127.0.0.1:8000/music/" + id)
+        .then(response =>{
+           console.log(response.data);
+        })
+        .catch((err) =>{
+            console.log(err);
+        })
+
+    }
     
+    handleChange= (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+
     render() {
         return(
             <div>
