@@ -3,24 +3,6 @@ import axios from 'axios';
 import React, { Component } from 'react';
 
 class DisplayData extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { 
-    //         songs:[]
-    //      };
-    // }
-
-    // componentDidMount() {
-    //     this.getAllSongs();
-    // }
-
-    // getAllSongs() {
-    //     axios.get('http://127.0.0.1:8000/music/')
-    //     .then(response => response.data)
-    //     .then((data)=>{
-    //         this.setState({songs:data});
-    //     });
-    // }
 
     render() { 
         return ( 
@@ -69,43 +51,3 @@ class DisplayData extends Component {
 export default DisplayData;
 
 
-//     componentDidMount(){
-//         this.getAllSongs();
-           
-//        }
-   
-//        async getAllSongs(){
-//            let response = await axios.get('http://127.0.0.1:8000/music/');
-   
-//            this.setState({
-//                songs:response.data
-//            })
-//        }
-
-//     return(
-//         <div>
-//             <h2>List of Songs</h2>
-//             <table class="table table-bordered">
-//                 <tbody>
-//                 { 
-//                 props.songs.map
-//                 (song => <div key={song.title}>{song.title} {song.artist} {song.album} {song.genre} {song.release_date}</div>)
-//                 }
-
-//                 </tbody>
-//             </table>
-//         </div>
-//     )   
-// }
-
-
-
-      
-                // <tr>
-                        
-                //     <td>{props.songs.title}</td>
-                //     <td>{props.songs.artist}</td>
-                //     <td>{props.songs.album}</td>
-                //     <td>{props.songs.genre}</td>
-                //     <td>{props.songs.release_date}</td>
-                // </tr>

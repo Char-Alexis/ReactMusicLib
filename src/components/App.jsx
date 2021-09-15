@@ -5,8 +5,6 @@ import DisplayData from "./DisplayData";
 import SongForm from "./SongForm";
 import SearchBar from "./SearchBar";
 
-
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +13,7 @@ class App extends Component {
             
         }
     }
-// displayData
+
     componentDidMount() {
         this.getAllSongs();
     }
@@ -27,18 +25,14 @@ class App extends Component {
             this.setState({songs:data});
         });
     }
-// posts new song
+
     handleSongSubmit = (newSongData) => {
         this.setState ({
             songs: [...this.state.songs, newSongData]
             
         })
     }
-//remove song
 
-// filter
-
-handleChange
     
     render() {
         return(
@@ -54,30 +48,3 @@ handleChange
 
 export default App;
 
-// removeSong () {
-//     axios.delete('http://127.0.0.1:8000/music/2',{this.setState.songs})
-//     .then((data) => {
-//         console.log(data);
-//         })
-//     .catch((err) =>{
-//         console.log(err);
-//     });
-//     this.setState({
-//         // songs: this.state.songs.filter(song => {song.id} !== song.id)
-//     });
-// }
-
-// const SongForm = () => {
-//     const [songs, setSongs] = useState()
-// componentDidMount(){
-//     axios
-//     .get('http://127.0.0.1:8000/music/')
-//     .then(response => this.setState({
-//         songs:response.data
-      
-//     }));
-    
-//     async function getAllSongs(){
-//         let response = await axios.get('http://127.0.0.1:8000/music/')
-//         setSongs(response)
-//     }

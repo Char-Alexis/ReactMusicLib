@@ -12,12 +12,7 @@ const initialSongFormData={
 }
 
 const SongForm = (props) => {
-    // const [songs, setSongs] = useState()
-    // const [title, setTitle] = useState()
-    // const [album, setAlbum] = useState()
-    // const [artist, setArtist] = useState()
-    // const [genre, setGenre] = useState()
-    // const [releaseDate, setReleaseDate] = useState()
+
     const [songData, setSongData]= useState(initialSongFormData);
     console.log (songData)
  
