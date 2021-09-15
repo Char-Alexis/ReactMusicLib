@@ -56,7 +56,7 @@ class App extends Component {
     getSearchResults = () => {
         this.setState({
             ...this.state,
-            songs: this.props.songs.filter()
+            songs: this.songs.filter()
         })
     }
 
@@ -66,7 +66,7 @@ class App extends Component {
             <div>
                 <DisplayData songs={this.state.songs} />
                 <SongForm onSubmit={this.handleSongSubmit}/>
-                <SearchBar searchSong={this.handleChange} />
+                <SearchBar searchSong={this.getSearchResults} />
             </div>
         )
     }

@@ -40,19 +40,19 @@ const SongForm = (props) => {
         <div className="SongForm">
             <h2>Song Form</h2>
             
-            <form className="row" >
+            <form className="form-row" >
                 <label>Song Title</label>
-                <input type= "text" name="title" onInput={handleChange} value={songData.title}/>
+                <input type= "text" name="title" class="form-control" onInput={handleChange} value={songData.title}/>
                 <label>Album</label>
-                <input type= "text" name="album" onInput={handleChange} value={songData.album} />
+                <input type= "text" name="album" class="form-control" onInput={handleChange} value={songData.album} />
                 <label>Artist</label>
-                <input type= "text" name="artist" onInput={handleChange} value={songData.artist} />
+                <input type= "text" name="artist" class="form-control" onInput={handleChange} value={songData.artist} />
                 <label>Genre</label>
-                <input type= "text" name="genre" onInput={handleChange} value={songData.genre} />
+                <input type= "text" name="genre" class="form-control" onInput={handleChange} value={songData.genre} />
                 <label>Release Date</label>
-                <input type= "text" name="release_date" onInput={handleChange} value={songData.release_date} />
+                <input type= "text" name="release_date" class="form-control" onInput={handleChange} value={songData.release_date} />
 
-                <button type="button" onClick= {handleSubmit} class="btn btn-outline-dark btn-rounded"> Add Song</button>
+                <button type="button" onClick= {handleSubmit} class="form-control" class="btn btn-outline-dark btn-rounded"> Add Song</button>
             </form>
         </div>
       );
