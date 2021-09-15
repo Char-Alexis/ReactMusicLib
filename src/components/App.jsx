@@ -9,6 +9,7 @@ class App extends Component {
         super(props);
         this.state = { 
             songs:[],
+            search:'',
             
         }
     }
@@ -33,8 +34,8 @@ class App extends Component {
     }
 
 
-    deleteSongData = (id) => {
-        axios.delete ("http://127.0.0.1:8000/music/" + id)
+    deleteSongData = (id, event) => {
+        axios.delete ("http://127.0.0.1:8000/music/1" + id)
         .then(response =>{
            console.log(response.data);
         })
@@ -43,10 +44,19 @@ class App extends Component {
         })
 
     }
-    
+
+    //Searchbar
     handleChange= (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            ...this.state,
+            search: event.target.value
+        })
+    }
+
+    getSearchResults = () => {
+        this.setState({
+            ...this.state,
+            songs: this.props.songs.filter()
         })
     }
 
@@ -54,7 +64,7 @@ class App extends Component {
     render() {
         return(
             <div>
-                <DisplayData songs={this.state.songs}/>
+                <DisplayData songs={this.state.songs} />
                 <SongForm onSubmit={this.handleSongSubmit}/>
                 <SearchBar searchSong={this.handleChange} />
             </div>

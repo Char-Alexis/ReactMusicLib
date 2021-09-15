@@ -11,11 +11,7 @@ const SearchBar = (props) => {
         <div class="input-group">
             <h3>Search songs</h3>
     
-            <input type="text" placeholder='Search ...' onChange={props.handleChange} />
-                
-            {/* {
-            props.songs.filter(song => <li {props.song} </li>
-            } */}
+            <input type="text" placeholder='Search ...' onChange={props.searchSong}/>
 
             <button type="button" class="btn btn-outline-dark btn-rounded" data-mdb-ripple-color="dark">search</button>
                     

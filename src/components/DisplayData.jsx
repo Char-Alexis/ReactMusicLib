@@ -32,7 +32,7 @@ class DisplayData extends Component {
                             <td>{song.genre}</td>
                             <td>{song.release_date}</td>
                             <td>
-                                <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={this.deleteSongData} >Delete</button>
+                                <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={(event) => this.deleteSongData(song.id, event)} >Delete</button>
                             </td> 
                             
                         </tr>
