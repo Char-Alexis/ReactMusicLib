@@ -15,27 +15,37 @@ class App extends Component {
             
         }
     }
+// displayData
+    componentDidMount() {
+        this.getAllSongs();
+    }
 
-    // removeSong () {
-    //     axios.delete('http://127.0.0.1:8000/music/2',{this.setState.songs})
-    //     .then((data) => {
-    //         console.log(data);
-    //         })
-    //     .catch((err) =>{
-    //         console.log(err);
-    //     });
-    //     this.setState({
-    //         // songs: this.state.songs.filter(song => {song.id} !== song.id)
-    //     });
-    // }
-  
-  
+    getAllSongs() {
+        axios.get('http://127.0.0.1:8000/music/')
+        .then(response => response.data)
+        .then((data)=>{
+            this.setState({songs:data});
+        });
+    }
+// posts new song
+    handleSongSubmit = (newSongData) => {
+        this.setState ({
+            songs: [...this.state.songs, newSongData]
+            
+        })
+    }
+//remove song
+
+// filter
+
+handleChange
+    
     render() {
         return(
             <div>
-                <DisplayData displayedSongs={this.songs}/>
-                <SongForm />
-                <SearchBar searchSong={this.songs} />
+                <DisplayData songs={this.state.songs}/>
+                <SongForm onSubmit={this.handleSongSubmit}/>
+                <SearchBar searchSong={this.handleChange} />
             </div>
         )
     }
@@ -44,6 +54,18 @@ class App extends Component {
 
 export default App;
 
+// removeSong () {
+//     axios.delete('http://127.0.0.1:8000/music/2',{this.setState.songs})
+//     .then((data) => {
+//         console.log(data);
+//         })
+//     .catch((err) =>{
+//         console.log(err);
+//     });
+//     this.setState({
+//         // songs: this.state.songs.filter(song => {song.id} !== song.id)
+//     });
+// }
 
 // const SongForm = () => {
 //     const [songs, setSongs] = useState()

@@ -2,37 +2,41 @@ import React, {useState} from 'react';
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 
+const initialSongFormData={
+    title: '',
+    album:'',
+    artist:'',
+    genre:'',
+    release_date:'',
 
+}
 
-const SongForm = () => {
-    const [songs, setSongs] = useState()
-    const [title, setTitle] = useState()
-    const [album, setAlbum] = useState()
-    const [artist, setArtist] = useState()
-    const [genre, setGenre] = useState()
-    const [releaseDate, setReleaseDate] = useState()
+const SongForm = (props) => {
+    // const [songs, setSongs] = useState()
+    // const [title, setTitle] = useState()
+    // const [album, setAlbum] = useState()
+    // const [artist, setArtist] = useState()
+    // const [genre, setGenre] = useState()
+    // const [releaseDate, setReleaseDate] = useState()
+    const [songData, setSongData]= useState(initialSongFormData);
+    console.log (songData)
  
-    function handleChange (event) {
-        setSongs(event.target.value);
+    const handleChange= (event)=> {
+        const newData= {
+            ...songData, 
+            [event.target.name]: event.target.value
+        }
+        setSongData(newData);
     };
 
     
-    function handleSubmit (event) {
-        event.preventDefault();
-        
-        const data = {
-            title: title,
-            album: album,
-            artist: artist,
-            genre: genre,
-            releaseDate: releaseDate
-          };
-          console.log(data)
-          axios.post("http://127.0.0.1:8000/music/", data)
-            // .then(res => {
-            //     console.log(res)
-            // })
-            // .catch(err => console.log(err));     
+    const handleSubmit= (event)=> {
+          axios.post("http://127.0.0.1:8000/music/", songData)
+            .then(res => {
+                console.log(res)
+                props.onSubmit(res.data)
+            })
+            .catch(err => console.log(err));     
     };
 
 
@@ -41,18 +45,19 @@ const SongForm = () => {
         <div className="SongForm">
             <h2>Song Form</h2>
             
-            <form className="row" onSubmit= {(event) => handleSubmit(event)}>
+            <form className="row" >
                 <label>Song Title</label>
-                <input type= "text" name="songtitle" onChange={handleChange} value={title}/>
+                <input type= "text" name="title" onInput={handleChange} value={songData.title}/>
                 <label>Album</label>
-                <input type= "text" name="album" onChange={handleChange} value={album} />
+                <input type= "text" name="album" onInput={handleChange} value={songData.album} />
                 <label>Artist</label>
-                <input type= "text" name="artist" onChange={handleChange} value={artist} />
+                <input type= "text" name="artist" onInput={handleChange} value={songData.artist} />
                 <label>Genre</label>
-                <input type= "text" name="genre" onChange={handleChange} value={genre} />
+                <input type= "text" name="genre" onInput={handleChange} value={songData.genre} />
                 <label>Release Date</label>
-                <input type= "text" name="releasedate" onChange={handleChange} value={releaseDate} />
-                <button type="submit" class="btn btn-outline-dark btn-rounded"> Add Song</button>
+                <input type= "text" name="release_date" onInput={handleChange} value={songData.release_date} />
+
+                <button type="button" onClick= {handleSubmit} class="btn btn-outline-dark btn-rounded"> Add Song</button>
             </form>
         </div>
       );

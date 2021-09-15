@@ -3,24 +3,24 @@ import axios from 'axios';
 import React, { Component } from 'react';
 
 class DisplayData extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
-            songs:[]
-         };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = { 
+    //         songs:[]
+    //      };
+    // }
 
-    componentDidMount() {
-        this.getAllSongs();
-    }
+    // componentDidMount() {
+    //     this.getAllSongs();
+    // }
 
-    getAllSongs() {
-        axios.get('http://127.0.0.1:8000/music/')
-        .then(response => response.data)
-        .then((data)=>{
-            this.setState({songs:data});
-        });
-    }
+    // getAllSongs() {
+    //     axios.get('http://127.0.0.1:8000/music/')
+    //     .then(response => response.data)
+    //     .then((data)=>{
+    //         this.setState({songs:data});
+    //     });
+    // }
 
     render() { 
         return ( 
@@ -39,10 +39,10 @@ class DisplayData extends Component {
                 <tbody>
                 
                     {
-                        this.state.songs.length === 0 ?
+                        this.props.songs.length === 0 ?
                         <tr align="center"></tr> :
                     
-                        this.state.songs.map((song)=> (
+                        this.props.songs.map((song)=> (
                         <tr key={song.id}>
                             
 
@@ -51,10 +51,10 @@ class DisplayData extends Component {
                             <td>{song.album}</td>
                             <td>{song.genre}</td>
                             <td>{song.release_date}</td>
-                            {/* <td>
-                                <button onClick={this.props.removeSong}>Delete</button>
+                            <td>
+                                <button>Delete</button>
                             </td> 
-                             */}
+                            
                         </tr>
                         ))
                     }
