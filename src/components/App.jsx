@@ -1,15 +1,15 @@
 import axios from "axios";
 import { Component } from "react";
-import DisplayData from "./DisplayData";
-import SongForm from "./SongForm";
+import SongList from "./SongList";
 import SearchBar from "./SearchBar";
+import SongForm from "./SongForm";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             songs:[],
-            search:'',
+            searchCriteria:'',
             
         }
     }
@@ -26,47 +26,49 @@ class App extends Component {
         });
     }
 
+    
     handleSongSubmit = (newSongData) => {
         this.setState ({
             songs: [...this.state.songs, newSongData]
             
         })
     }
-
+    
 
     deleteSongData = (id, event) => {
         axios.delete ("http://127.0.0.1:8000/music/1" + id)
         .then(response =>{
-           console.log(response.data);
+            console.log(response.data);
         })
         .catch((err) =>{
             console.log(err);
         })
-
+        
     }
-
+    
     //Searchbar
-    handleChange= (event) => {
-        this.setState({
-            ...this.state,
-            search: event.target.value
-        })
-    }
-
-    getSearchResults = () => {
-        this.setState({
-            ...this.state,
-            songs: this.songs.filter()
-        })
-    }
-
-
+    // handleSearch= (event) => {
+    //     this.setState({
+    //         ...this.state,
+    //         searchCriteria: event.target.value
+    //     })
+    // }
+    
+    // getSearchResults = () => {
+        //     this.setState({
+            //         ...this.state,
+            //         songs: this.songs.filter()
+            //     })
+            // }
+            
+            
     render() {
+     
         return(
             <div>
-                <DisplayData songs={this.state.songs} />
+                <SearchBar  />
+                <SongList songs={this.state.songs} />
                 <SongForm onSubmit={this.handleSongSubmit}/>
-                <SearchBar searchSong={this.getSearchResults} />
             </div>
         )
     }
