@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-
+// import "./SongList.css"
 class DisplayData extends Component {
 
     render() { 
         return ( 
-            <div>
+            <div className="container">
+            <div class="row justify-content-center">
                 <h2>Song List</h2>
-            <table class="table table-bordered">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -16,7 +17,7 @@ class DisplayData extends Component {
                         <th>Release Date</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="">
                 
                     {
                         this.props.songs.length === 0 ?
@@ -32,7 +33,7 @@ class DisplayData extends Component {
                             <td>{song.genre}</td>
                             <td>{song.release_date}</td>
                             <td>
-                                <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={(event) => this.deleteSongData(song.id, event)} >Delete</button>
+                                <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={(event) => this.props.deleteSongData(song.id, event)} >Delete</button>
                             </td> 
                             
                         </tr>
@@ -41,7 +42,12 @@ class DisplayData extends Component {
                 </tbody>
 
             </table>
+            
             </div>
+            </div>
+
+
+	
          );
     }
 }

@@ -36,9 +36,10 @@ class App extends Component {
     
 
     deleteSongData = (id, event) => {
-        axios.delete ("http://127.0.0.1:8000/music/1" + id)
+        axios.delete ("http://127.0.0.1:8000/music/" + id)
         .then(response =>{
             console.log(response.data);
+            this.getAllSongs();
         })
         .catch((err) =>{
             console.log(err);
@@ -65,11 +66,14 @@ class App extends Component {
     render() {
      
         return(
-            <div>
+            <div >
+
                 <SearchBar  />
-                <SongList songs={this.state.songs} />
+                <SongList songs={this.state.songs} deleteSongData={this.deleteSongData} />
                 <SongForm onSubmit={this.handleSongSubmit}/>
             </div>
+
+
         )
     }
 }
