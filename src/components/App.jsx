@@ -3,6 +3,8 @@ import { Component } from "react";
 import SongList from "./SongList";
 import SearchBar from "./SearchBar";
 import SongForm from "./SongForm";
+import './App.css'
+<link rel="preconnect" href="https://fonts.googleapis.com"></link>
 
 class App extends Component {
     constructor(props) {
@@ -67,7 +69,7 @@ class App extends Component {
      
         return(
             <div >
-
+                <h1>Music Library</h1>
                 <SearchBar  />
                 <SongList songs={this.state.songs} deleteSongData={this.deleteSongData} />
                 <SongForm onSubmit={this.handleSongSubmit}/>

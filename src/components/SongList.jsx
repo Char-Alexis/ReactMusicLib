@@ -5,8 +5,7 @@ class DisplayData extends Component {
     render() { 
         return ( 
             <div className="container">
-            <div class="row justify-content-center">
-                <h2>Song List</h2>
+            <div class="header">
             <table class="table">
                 <thead>
                     <tr>
@@ -17,11 +16,11 @@ class DisplayData extends Component {
                         <th>Release Date</th>
                     </tr>
                 </thead>
-                <tbody className="">
+                <tbody className="col">
                 
                     {
                         this.props.songs.length === 0 ?
-                        <tr align="center"></tr> :
+                        <tr align=""></tr> :
                     
                         this.props.songs.map((song)=> (
                         <tr key={song.id}>
