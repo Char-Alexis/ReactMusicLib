@@ -43,22 +43,23 @@ const SongForm = (props) => {
     <div class="col">
       <div class="contact-us">
       <form class="form">
-        <label for="title">Title</label>
-        <input type="text" name="title" onInput={handleChange} value={songData.title}/>
-        <label for="album">Album</label>
-        <input type="text" name="album" onInput={handleChange} value={songData.album} />
-         <label for="artist">Artist</label>
-        <input type="text" name="artist" onInput={handleChange} value={songData.artist}/>
-        <label for="genre">Genre</label>
-        <input type="text" name="genre" onInput={handleChange} value={songData.genre}/>
-         <label for="genre">Release Date</label>
-        <input type="text" name="release_date" onInput={handleChange} value={songData.release_date}/>
+        <label for="title"></label>
+        <input type="text" name="title" placeholder='Title' onInput={handleChange} value={songData.title}/>
+        <label for="album"></label>
+        <input type="text" name="album" placeholder='Album' onInput={handleChange} value={songData.album} />
+         <label for="artist"></label>
+        <input type="text" name="artist" placeholder='Artist' onInput={handleChange} value={songData.artist}/>
+        <label for="genre"></label>
+        <input type="text" name="genre" placeholder='Genre' onInput={handleChange} value={songData.genre}/>
+         <label for="genre"></label>
+        <input type="text" name="release_date" placeholder='Release Date' onInput={handleChange} value={songData.release_date}/>
         <button type="submit" onClick= {handleSubmit} id="submit" value="Submit">Add</button> 
       </form>
     </div>
     </div>
     <div class="col">
-      <h1>Add songs here</h1>
+      <h2>Music Library</h2>
+      <h4>add songs here</h4>
     </div>
         <div className="container">
 

@@ -1,5 +1,4 @@
 
-
 body{
 	font-size: 16px;
 	line-height: 1.8;
@@ -21,7 +20,7 @@ h1, h2, h3, h4, h5,
 
 .heading-section{
 	font-size: 28px;
-	color: black;
+	
 }
 
 thead{
@@ -30,14 +29,21 @@ thead{
 		
 }
 
-tr{
+th{
 	margin-bottom: 10px;
-	
-	background-color: black;
+	background-color: #eeeeee;
+	padding:10px;
+	color:#777373;
 }
 
-th,td{
+td{
 	border: none;
 	padding:30px;
 	font-size: 14px;
+	color: black;
+}
+
+button{
+	border: none;
+
 }

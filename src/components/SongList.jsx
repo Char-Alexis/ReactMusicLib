@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import "./SongList.css"
 class DisplayData extends Component {
 
@@ -10,7 +9,7 @@ class DisplayData extends Component {
             <div className="container">
             <div class="row">
             <table class="heading-section">
-                <thead class="thead-dark">
+                <thead>
                     <tr>
                         <th>Title</th>
                         <th>Artist</th>
@@ -38,8 +37,7 @@ class DisplayData extends Component {
                             <td>{song.genre}</td>
                             <td>{song.release_date}</td>
                             <td>
-                                <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={(event) => this.props.deleteSongData(song.id, event)} >Delete</button>
-
+                                <button type="button"  onClick={(event) => this.props.deleteSongData(song.id, event)} >❌</button>
                             </td> 
                             
                         </tr>
