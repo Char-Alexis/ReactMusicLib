@@ -1,4 +1,39 @@
-.SearchBar{
-    vertical-align: top;
+
+.table{
+	min-width: 1000px !important;
+	width: 100%;
+	border-collapse:separate;
+  border-spacing: 0 10px;
+	thead{
+		th{
+			border: none;
+			padding: 30px;
+			font-size: 14px;
+			color: white;
+		}
+		tr{
+		}
+	}
+	tbody{
+		tr{
+			margin-bottom: 10px;
+			-webkit-box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
+			-moz-box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
+			box-shadow: 0px 5px 12px -12px rgba(0,0,0,0.29);
+		}
+		th,td{
+			border: none;
+			padding:30px;
+			font-size: 14px;
+			background: white;
+		}
+		td{
+			.close{
+				span{
+					font-size: 12px;
+				}
+			}
+		}
+	}
 }
 

@@ -71,7 +71,6 @@ class App extends Component {
         return(
             <div className="container-fluid" >
                 <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 p-3" > 
-                <h1>Music Library</h1>
                 <SearchBar search={this.getSearchResults}/>
 
                 <div className="row justify-content-md-center p-3">

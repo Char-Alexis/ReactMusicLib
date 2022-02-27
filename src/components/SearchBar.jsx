@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 import 'bootstrap/dist/css/bootstrap.css';
 
 function SearchBar() {
@@ -12,7 +13,6 @@ function SearchBar() {
     return(
         
         <div>
-            
             <input type="text" placeholder="Search..."  onChange={(event) => {setSearchTerm(event.target.value);}}></input>
             {Object.values(search).filter((row) =>{
                 if (searchTerm == "") {

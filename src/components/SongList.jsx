@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-// import "./SongList.css"
+import "./SongList.css"
 class DisplayData extends Component {
 
 
@@ -9,8 +9,8 @@ class DisplayData extends Component {
         return ( 
             <div className="container">
             <div class="row">
-            <table class="table">
-                <thead>
+            <table class="heading-section">
+                <thead class="thead-dark">
                     <tr>
                         <th>Title</th>
                         <th>Artist</th>
@@ -19,7 +19,10 @@ class DisplayData extends Component {
                         <th>Release Date</th>
                     </tr>
                 </thead>
+                
+                <table class="table"></table>
                 <tbody className="col">
+
                 
                     {
                         this.props.songs.length === 0 ?
@@ -36,6 +39,7 @@ class DisplayData extends Component {
                             <td>{song.release_date}</td>
                             <td>
                                 <button type="button" class= "btn btn-outline-dark btn-rounded" onClick={(event) => this.props.deleteSongData(song.id, event)} >Delete</button>
+
                             </td> 
                             
                         </tr>
