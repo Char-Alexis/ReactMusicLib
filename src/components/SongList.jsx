@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+
 // import "./SongList.css"
 class DisplayData extends Component {
+
+
 
     render() { 
         return ( 
             <div className="container">
-            <div class="header">
+            <div class="row">
             <table class="table">
                 <thead>
                     <tr>
@@ -43,6 +46,8 @@ class DisplayData extends Component {
             </table>
             
             </div>
+
+         
             </div>
 
 

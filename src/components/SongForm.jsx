@@ -37,16 +37,11 @@ const SongForm = (props) => {
 
 
     return (
-        <div className="SongForm">
 
-            <div class="page">
-  <div class="container">
-    <div class="left">
-      <div class="login">Add songs to your playlist </div>
-      <div class="eula">Post songs</div>
-      
-    </div>
-    <div class="contact-us">
+      <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="contact-us">
       <form class="form">
         <label for="title">Title</label>
         <input type="text" name="title" onInput={handleChange} value={songData.title}/>
@@ -61,10 +56,23 @@ const SongForm = (props) => {
         <button type="submit" onClick= {handleSubmit} id="submit" value="Submit">Add</button> 
       </form>
     </div>
+    </div>
+    <div class="col">
+      <h1>Add songs here</h1>
+    </div>
+        <div className="container">
+
+            <div class="row">
+
+      
+    </div>
+    
   </div>
+  
 </div>
 
  </div>
+ 
       );
 
 }

@@ -49,13 +49,12 @@ class App extends Component {
         
     }
     
-    //Searchbar
-    // handleSearch= (event) => {
-    //     this.setState({
-    //         ...this.state,
-    //         searchCriteria: event.target.value
-    //     })
-    // }
+    getSearchResults= (event) => {
+        this.setState({
+            ...this.state,
+            searchCriteria: event.target.value
+        })
+    }
     
     // getSearchResults = () => {
         //     this.setState({
@@ -64,15 +63,23 @@ class App extends Component {
             //     })
             // }
             
-            
+           
+
+
     render() {
      
         return(
-            <div >
+            <div className="container-fluid" >
+                <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-1 p-3" > 
                 <h1>Music Library</h1>
-                <SearchBar  />
+                <SearchBar search={this.getSearchResults}/>
+
+                <div className="row justify-content-md-center p-3">
                 <SongList songs={this.state.songs} deleteSongData={this.deleteSongData} />
                 <SongForm onSubmit={this.handleSongSubmit}/>
+
+                </div>
+                </div>
             </div>
 
 
