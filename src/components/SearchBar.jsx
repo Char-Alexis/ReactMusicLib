@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './SearchBar.css'
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,8 +13,8 @@ function SearchBar() {
  
     return(
         
-        <div>
-            <input type="text" placeholder="Search..."  onChange={(event) => {setSearchTerm(event.target.value);}}></input>
+        <div id="cover">
+            <input className="search_bar" type="text" placeholder="Search..."  onChange={(event) => {setSearchTerm(event.target.value);}}></input>
             {Object.values(search).filter((row) =>{
                 if (searchTerm == "") {
                     return searchTerm
