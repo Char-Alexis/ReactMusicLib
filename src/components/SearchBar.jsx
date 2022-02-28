@@ -12,8 +12,9 @@ function SearchBar() {
     }
  
     return(
-        
+        <div>
         <div id="cover">
+            
             <input className="search_bar" type="text" placeholder="Search..."  onChange={(event) => {setSearchTerm(event.target.value);}}></input>
             {Object.values(search).filter((row) =>{
                 if (searchTerm == "") {
@@ -30,10 +31,16 @@ function SearchBar() {
                         <p>{song.release_date}</p>
 
                     </div>
+
+                    
                 );
             })}
 
             {/* <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/> */}
+        </div>
+            <h2>Music Library</h2>
+            <p>Welcome! Store a collection of your treasured songs here 🎵</p>
+            <p>Post your favorite songs down below 👇</p> 
         </div>
 
     )

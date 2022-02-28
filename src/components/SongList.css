@@ -7,17 +7,6 @@ body{
 	color: lighten(50%);
 }
 
-
-h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
-	line-height: 1.5;
-	font-weight: 400;
-
-	color: black;
-}
-
-
-
 .heading-section{
 	font-size: 28px;
 	
@@ -26,6 +15,7 @@ h1, h2, h3, h4, h5,
 thead{
 	border: none;
 	padding: 30px;
+
 		
 }
 
@@ -34,6 +24,7 @@ th{
 	background-color: #eeeeee;
 	padding:10px;
 	color:#777373;
+	
 }
 
 td{

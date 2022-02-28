@@ -58,8 +58,7 @@ const SongForm = (props) => {
     </div>
     </div>
     <div class="col">
-      <h2>Music Library</h2>
-      <h4>add songs here</h4>
+   
     </div>
         <div className="container">
 
