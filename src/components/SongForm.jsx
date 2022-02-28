@@ -41,7 +41,7 @@ const SongForm = (props) => {
       <div class="container">
   <div class="row">
     <div class="col">
-      <div class="contact-us">
+      <div class="">
       <form class="form">
         <label for="title"></label>
         <input type="text" name="title" placeholder='Title' onInput={handleChange} value={songData.title}/>
@@ -53,7 +53,7 @@ const SongForm = (props) => {
         <input type="text" name="genre" placeholder='Genre' onInput={handleChange} value={songData.genre}/>
          <label for="genre"></label>
         <input type="text" name="release_date" placeholder='Release Date' onInput={handleChange} value={songData.release_date}/>
-        <button type="submit" onClick= {handleSubmit} id="submit" value="Submit">Add</button> 
+        <button type="submit" onClick= {handleSubmit} value="Submit">Add</button> 
       </form>
     </div>
     </div>
