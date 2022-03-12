@@ -13,6 +13,9 @@ body{
 	
 }
 
+.container{
+	padding: 40px;
+}
 th{
 	margin-bottom: 10px;
 	background-color: #eeeeee;

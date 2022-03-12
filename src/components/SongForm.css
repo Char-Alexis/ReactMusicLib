@@ -1,18 +1,14 @@
 
-.container{
-    margin-top: 20px;
-    margin-left: 40px;
-}
-
 .form{
     background: #eeeeee;
     padding: 50px 100px;
     box-shadow: 7px 7px #8E8D8A;
     border: 1px solid #95a5a6;
     border-radius: 20px;
-    margin-left: 160px;
+    margin-left:350px;
+    margin-right:350px;
+    
 }
-
 
 input{
     width: 100%;
@@ -36,8 +32,8 @@ button{
   outline: none;
   border: none;
   line-height: 14pt;
-  border: 1px solid #8E8D8A;
-  box-shadow: 3px 3px 1px #95a5a6, 3px 3px 1px 1px;
+  /* border: 1px solid #8E8D8A; */
+  /* box-shadow: 3px 3px 1px #95a5a6, 3px 3px 1px 1px; */
   margin-top: 20px;
 
 }
